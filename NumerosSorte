@@ -1,0 +1,31 @@
+/******************************************************************************
+
+Numeros da sorte - exercicio 6
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    srand(time(NULL));
+    int sorte, palpite=-1, tentativas=1;
+    sorte = rand() % 30 + 1;
+    
+//entrada
+    while (palpite != sorte){
+       printf("Digite o palpite de 1 a 30: ");
+       scanf ("%d", &palpite);
+       if (sorte > palpite){
+        printf ("É maior \n");
+        tentativas++;
+       }
+       if (sorte < palpite){    
+        printf ("É menor \n");
+        tentativas++;
+       }
+     
+    }
+    printf ("ACERTOU! Com total de: %d", tentativas);
+   return 0;
+}
